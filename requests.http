@@ -1,0 +1,36 @@
+### Create a new client
+POST http://localhost:3333/clients
+Content-Type: application/json
+
+{
+  "name": "Johnny fontes rabelo",
+  "telephone": "5523996738213",
+  "email": "john.doe@example.com",
+  "passToPass": {},
+  "observation": "New client",
+  "plan": "Recorrente",
+  "date": "2024-07-13T00:00:00Z",
+  "suporteId": 7,
+  "updatedAt": "2024-07-13T00:00:00Z"
+}
+
+### Get all clients
+GET http://localhost:3333/clients
+
+### Get a specific client
+GET http://localhost:3333/clients/3
+
+### Update a client
+PUT http://localhost:3333/clients/3
+Content-Type: application/json
+
+{
+  "passToPass": {"Perfil": false}
+}
+
+### Delete a client
+DELETE http://localhost:3333/clients/1
+
+###
+
+GET http://localhost:3333/clientsWithSuporte
