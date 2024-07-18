@@ -19,3 +19,4 @@ router.get('clientsWithSuporte', [ClientesController, 'clientWithSuporte'])
 
 router.post('/suportes', [SuportesController, 'store'])
 router.get('/suportes', [SuportesController, 'index'])
+router.get('/suportes/:id/clients', [SuportesController, 'show'])

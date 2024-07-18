@@ -12,4 +12,9 @@ export default class SupotesController {
     const suporte = await Suporte.create(data)
     return response.created(suporte)
   }
+
+  async show({ params, response }: HttpContext) {
+    const suporte = await Suporte.query().where('id', params.id).preload('clients').firstOrFail()
+    return response.ok(suporte)
+  }
 }

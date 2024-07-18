@@ -49,6 +49,7 @@ export default class ClientesController {
       'plan',
       'passToPass',
       'suporteId',
+      'secondPayment',
     ])
     client.merge(data)
     await client.save()

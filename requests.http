@@ -21,11 +21,11 @@ GET http://localhost:3333/clients
 GET http://localhost:3333/clients/3
 
 ### Update a client
-PUT http://localhost:3333/clients/3
+PUT http://localhost:3333/clients/1
 Content-Type: application/json
 
 {
-  "passToPass": {"Perfil": false}
+  "secondPayment": true
 }
 
 ### Delete a client
@@ -34,3 +34,20 @@ DELETE http://localhost:3333/clients/1
 ###
 
 GET http://localhost:3333/clientsWithSuporte
+
+###
+
+POST http://localhost:3333/suportes
+Content-Type: application/json
+
+{
+  "name": "Luan",
+  "email": "luan@whatsmenu.com.br",
+  "type": "Suporte 1",
+  "number": "5512978678"
+}
+
+###
+
+GET http://localhost:3333/suportes/1/clients
+Accept: application/json
