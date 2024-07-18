@@ -7,6 +7,22 @@
 |
 */
 import router from '@adonisjs/core/services/router'
+import AutoSwagger from 'adonis-autoswagger'
+import swagger from '#config/swagger'
+// returns swagger in YAML
+router.get('/swagger', async () => {
+  //@ts-ignore
+  return AutoSwagger.default.docs(router.toJSON(), swagger)
+})
+
+// Renders Swagger-UI and passes YAML-output of /swagger
+router.get('/docs', async () => {
+  //@ts-ignore
+  return AutoSwagger.default.ui('/swagger', swagger)
+  // return AutoSwagger.default.scalar("/swagger"); to use Scalar instead
+  // return AutoSwagger.default.rapidoc("/swagger", "view"); to use RapiDoc instead (pass "view" default, or "read" to change the render-style)
+})
+
 const ClientesController = () => import('#controllers/clientes_controller')
 const SuportesController = () => import('#controllers/supotes_controller')
 
