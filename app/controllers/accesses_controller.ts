@@ -3,7 +3,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 export default class AccessesController {
   async index({ response }: HttpContext) {
-    const accesses = await Access.all()
+    const accesses = await Access.query().preload('client')
     return response.ok(accesses)
   }
 
