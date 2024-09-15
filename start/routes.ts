@@ -25,6 +25,7 @@ router.get('/docs', async () => {
 
 const ClientesController = () => import('#controllers/clientes_controller')
 const SuportesController = () => import('#controllers/supotes_controller')
+const AccessesController = () => import('#controllers/accesses_controller')
 
 router.get('/clients', [ClientesController, 'index'])
 router.post('/clients', [ClientesController, 'store'])
@@ -32,7 +33,9 @@ router.get('/clients/:id', [ClientesController, 'show'])
 router.put('/clients/:id', [ClientesController, 'update'])
 router.delete('/clients/:id', [ClientesController, 'destroy'])
 router.get('clientsWithSuporte', [ClientesController, 'clientWithSuporte'])
-
 router.post('/suportes', [SuportesController, 'store'])
 router.get('/suportes', [SuportesController, 'index'])
 router.get('/suportes/:id/clients', [SuportesController, 'show'])
+router.get('/accesses', [AccessesController, 'index'])
+router.post('/accesses', [AccessesController, 'store'])
+router.put('/accesses/:id', [AccessesController, 'update'])

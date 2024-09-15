@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Delete a client
-DELETE http://localhost:3333/clients/1
+DELETE http://localhost:3333/clients/29
 
 ###
 
